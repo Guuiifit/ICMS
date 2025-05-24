@@ -9,6 +9,7 @@
 
     <style name="textoPadrao">
         <item name="android:textAllCaps">true</item> // Configure um estilo e pode chama-lo quando quiser.
+        <item name="android:textSize">15dp</item>
 
     </style>
 </resources>

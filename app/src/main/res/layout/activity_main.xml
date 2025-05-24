@@ -1,64 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:theme="@style/textoPadrao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digite o estado:"
-        android:textSize="20sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Estado (Sigla)"/>
-
-    <TextView
-        android:theme="@style/textoPadrao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digite o valor:!"
-        android:textSize="20sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valor"/>
-
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#29D6AE"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:theme="@style/textoPadrao"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Porcentagem do ICMS"
-            android:textSize="20sp" />
-        <TextView
-            android:theme="@style/textoPadrao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="%"
-            android:textSize="20sp" />
+            android:layout_height="150dp"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="Imagem Brasil"
+            android:scaleType="centerCrop"
+            android:src="@drawable/brasil"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digite o estado:"
+            android:theme="@style/textoPadrao" />
+
+        <EditText
+            android:id="@+id/editTextEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o Estado aqui"
+            android:inputType="textCapCharacters"
+            android:maxLength="2" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Digite o valor da Mercadoria:"
+            android:theme="@style/textoPadrao" />
+
+        <EditText
+            android:id="@+id/editTextValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:hint="Digite o Valor aqui"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e5efff"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Porcentagem do ICMS"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewPorcentagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Valor Total da Mercadoria:"
+                android:textAlignment="center"
+                android:theme="@style/textoPadrao" />
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$ 0,00"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:onClick="calcular"
+            android:text="Calcular" />
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Calcular"/>
-
-
-
-</LinearLayout>
+    </ScrollView>
